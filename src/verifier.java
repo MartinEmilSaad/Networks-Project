@@ -11,8 +11,14 @@ public class verifier {
 
         Scanner scanner = new Scanner(System.in);
 
-        String receivedMessage = scanner.nextLine();
-        String divisor = scanner.nextLine();
+        String receivedMessage = new String();
+        String divisor= new String();
+
+        if(scanner.hasNext()==true)
+          receivedMessage = scanner.nextLine();
+
+        if(scanner.hasNext()==true)
+         divisor = scanner.nextLine();
 
         Generator0 generator0 = new Generator0(receivedMessage, divisor);
 

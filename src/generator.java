@@ -22,10 +22,8 @@ public class generator {
 
         System.out.println(message+generator0.getCRC());
         System.out.println(divisor);
-        /*
-        System.out.println(generator0.concatenate_rem_to_messege(message,generator0.getCRC()));
 
-*/
+
         String default_path = new String(System.getProperty("user.dir"));
         File file = new File(default_path+"/transmitted_message.txt");
 
