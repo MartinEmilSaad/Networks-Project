@@ -10,6 +10,7 @@ public class Main {
          //   System.out.println(args[0]);
             String default_path2 = new String(System.getProperty("user.dir"));
             File file22 = new File(default_path2+"/hey.txt");
+            /*
             try {
                 boolean c = file22.createNewFile();
                 try( FileWriter fw = new FileWriter(file22) ){
@@ -23,6 +24,7 @@ public class Main {
             catch (Exception u){
                 System.out.println("error");
             }
+            */
         }
 
 
