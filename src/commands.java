@@ -43,45 +43,14 @@ public class commands {
 
 
     public void check_command_type(){
-       if(command_text.contains("alter"))
+       if(command_text.contains("verifier"))
            type = file_type.alter ;
 
        else
            type = file_type.verifier ;
    }
-   /*
-   public boolean is_command_true() {
-       if (command_text.substring(0, 8).equals("generate ")) {
-           //check the rest
-           if(type==file_type.verifier){
-               int index = command_text.indexOf('|') ;
-               if(command_text.substring(index+1 , index+6).equals("verify"))
-                   return true ;
-               else return false;
-           }
-           else{
-               int index = command_text.indexOf('|') ;
-               if(command_text.substring(index+1 , index+))
-           }
-       } else return false;
-   }
-   */
 
-   public boolean is_number(char i){
-       if(i=='0'|i=='1'||i=='2'||i=='3'||i=='4'||i=='5'||i=='6'||i=='7'||i=='8'||i=='9')
-           return true ;
-       else return false ;
-   }
 
-   public int index_of_altered(){
-       int index = command_text.indexOf("alter") ;
-       index += 6 ;
-       String number = new String("") ;
-      while(is_number(command_text.charAt(index))){
-          number += command_text.charAt(index) ;
-          index++;
-      }
-      return Integer.parseInt(number) ;
-   }
+
 
 }

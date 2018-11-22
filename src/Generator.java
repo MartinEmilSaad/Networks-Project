@@ -1,100 +1,42 @@
-import java.util.ArrayList;
+import com.sun.org.apache.xpath.internal.SourceTree;
 
-public class Generator {
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Scanner;
 
-    String stringData;
-    String stringGenerator ;
-    String CRC;
-
-    ArrayList<Boolean> boolData;
-    ArrayList<Boolean> boolGenerator ;
-
-    public Generator(String stringData, String stringGenerator) {
-        this.stringData = stringData;
-        this.stringGenerator = stringGenerator;
-    }
+/**
+ * Created by Martin on 11/22/2018.
+ */
+public class generator {
 
 
-    public String getCRC(){
-
-        boolData = new ArrayList<>();
-        boolGenerator = new ArrayList<>();
-
-        for (int k = 0; k < stringData.length(); k++) {
-
-            if(stringData.charAt(k)== '1')
-                boolData.add(true);
-
-            else
-                boolData.add(false);
-
-        }
-
-        for (int k = 0; k < stringGenerator.length()-1; k++) {
-            boolData.add(false);
-
-        }
-
-        for (int k = 0; k < stringGenerator.length(); k++) {
-
-            if(stringGenerator.charAt(k)== '1')
-                boolGenerator.add(true);
-
-            else
-                boolGenerator.add(false);
-
-        }
+    public static void main(String[] args){
 
 
-        int i=0, j=0;
+        Scanner scanner = new Scanner(System.in);
 
-        while(  ((boolData.size()-(i))>= boolGenerator.size()) )
+        String message = scanner.nextLine();
+        String divisor = scanner.nextLine();
+
+        Generator0 generator0 = new Generator0(message, divisor);
+
+        System.out.println(message);
+        System.out.println(divisor);
+        /*
+        System.out.println(generator0.concatenate_rem_to_messege(message,generator0.getCRC()));
+
+        String default_path = new String(System.getProperty("user.dir"));
+        File file = new File(default_path+"/transmitted_message.txt");
+
+        try( FileWriter fw = new FileWriter(file) ){
+            fw.write(message+generator0.getCRC());
+        }catch (Exception e)
         {
-            for(j=i; j< i+boolGenerator.size(); j++)
-            {
-                boolean temp = boolData.get(j)^ boolGenerator.get(j-i);
-                boolData.set(j, temp) ;
-
-            }
-            for(int k=i; k< boolData.size(); k++ )
-            {
-                if(boolData.get(k)== true)
-                {
-                    i=k; break;
-                }
-                else if(k == boolData.size()-1){
-                    i=k;
-                }
-
-            }
-
+            System.out.println("sth wrong");
         }
-
-
-        CRC ="";
-
-        for(int k=stringData.length(); k< boolData.size(); k++)
-        {
-            if(boolData.get(k)== true)
-                CRC += "1";
-
-            else
-                CRC += "0";
-
-
-        }
-
-        return CRC;
+        */
 
     }
-    public String concatenate_rem_to_messege(String messege , String rem){
-        return (messege+rem);
-    }
+
+
 }
-
-
-
-
-
-
-

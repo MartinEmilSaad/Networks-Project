@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -40,6 +39,9 @@ public class Main {
         File output1 ;
         File output2 ;
 
+        stringData = get_input.nextLine();
+        stringGenerator = get_input.nextLine() ;
+
         /*
 
       //  System.out.println("Inputs : ");
@@ -52,7 +54,7 @@ public class Main {
         try
             {
                 String default_path = new String(System.getProperty("user.dir"));
-                file = new File(default_path+"/"+args[0]);
+                file = new File(default_path+"/output.txt");
                 //open file
                 Scanner read_from_file = new Scanner(file);
                 int i = 0 ;
@@ -67,8 +69,8 @@ public class Main {
                         System.out.println(stringGenerator);
                     }
                 }
-                Generator generator = new Generator(stringData, stringGenerator);
-                String transmitted_messege=generator.concatenate_rem_to_messege(stringData,generator.getCRC());
+                Generator0 generator0 = new Generator0(stringData, stringGenerator);
+                String transmitted_messege= generator0.concatenate_rem_to_messege(stringData, generator0.getCRC());
 
                 System.out.println("Test Cases : ");
 
