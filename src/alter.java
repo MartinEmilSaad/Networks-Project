@@ -4,7 +4,7 @@ public class alter {
 
     public static void main(String[] args) {
 
-        String bitNumber = "1";
+        String bitNumber = args[0];
 
         Scanner scanner = new Scanner(System.in);
 
