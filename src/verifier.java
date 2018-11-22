@@ -22,28 +22,11 @@ public class verifier {
             verified += "0";
         }
 
-        if(generator0.getCRC().length()== verified.length()){
+        if(generator0.getCRC().equals(verified))
             System.out.println("message is correct");
-            String default_path = new String(System.getProperty("user.dir"));
-
-            File file = new File(default_path+"/transmitted_message.txt");
-            try {
-                Boolean s = file.createNewFile() ;
-            }
-           catch (Exception io){
-               System.out.println("Error while creating file");
-           }
-
-            try( FileWriter fw = new FileWriter(file) ){
-                fw.write(receivedMessage+generator0.getCRC());
-            }catch (Exception e)
-            {
-                System.out.println("sth wrong");
-            }
-        }
 
         else
-            System.out.println(receivedMessage + "         "+divisor);
+            System.out.println("Messege isn't correct");
 
 
     }

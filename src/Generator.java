@@ -1,4 +1,4 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
+
 
 import java.io.File;
 import java.io.FileWriter;
@@ -20,11 +20,12 @@ public class generator {
 
         Generator0 generator0 = new Generator0(message, divisor);
 
-        System.out.println(message);
+        System.out.println(message+generator0.getCRC());
         System.out.println(divisor);
         /*
         System.out.println(generator0.concatenate_rem_to_messege(message,generator0.getCRC()));
 
+*/
         String default_path = new String(System.getProperty("user.dir"));
         File file = new File(default_path+"/transmitted_message.txt");
 
@@ -34,7 +35,6 @@ public class generator {
         {
             System.out.println("sth wrong");
         }
-        */
 
     }
 
