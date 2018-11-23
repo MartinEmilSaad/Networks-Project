@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Network crc:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Network_crc_jar</output-path>
+    <root id="archive" name="Network crc.jar">
+      <element id="module-output" name="Network crc" />
+    </root>
+  </artifact>
+</component>

@@ -1,32 +1,38 @@
 import java.util.Scanner;
 
+/**
+ * Created by Martin on 11/23/2018.
+ */
 public class alter {
+    public static void main (String[] args){
+        Scanner scanner = new Scanner(System.in) ;
 
-    public static void main(String[] args) {
-
-        String bitNumber = args[0];
-
-        Scanner scanner = new Scanner(System.in);
-
-        String receivedMessage = scanner.nextLine().toString();
-        String divisor = scanner.nextLine().toString();
+        String manipulated_messege = new String() ;
+        manipulated_messege = "" ;
 
 
 
-        int bitNo = Integer.parseInt(bitNumber);
+       String data = scanner.nextLine() ;
+       String divisor = scanner.nextLine() ;
 
-        System.out.println(bitNo);
+        int bit_changed = 0 ;
+        if(args.length>0)
+            bit_changed = Integer.parseInt(args[0]) ;
+        for(int i =0 ; i<data.length() ; i++){
+            if(i==bit_changed){
+                if(data.charAt(i)=='1')
+                    manipulated_messege+="0" ;
+                else
+                    manipulated_messege += "1";
+            }
+            else
+            {
+                manipulated_messege += data.charAt(i) ;
+            }
+        }
 
-
-        if(receivedMessage.charAt(bitNo) == '1')
-        { receivedMessage = receivedMessage.substring(0, bitNo-1) + "0"+ receivedMessage.substring(bitNo); }
-        else
-        {  receivedMessage = receivedMessage.substring(0, 1) + "1"+ receivedMessage.substring(bitNo); }
-
-        System.out.println(receivedMessage);
+        System.out.println(manipulated_messege);
         System.out.println(divisor);
-
     }
-
 
 }
